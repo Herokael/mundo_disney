@@ -32,6 +32,6 @@ public class PersonajeEntity {
     @Column(name = "IMAGEN")
     private String imagen;
     
-    @ManyToMany
-    private List<ContenidoAudiovisualEntity> paises = new ArrayList<>();
+    @ManyToMany(mappedBy = "personajes", cascade = CascadeType.ALL)
+    private List<ContenidoAudiovisualEntity> contenidoaudiovisual = new ArrayList<>();
 }

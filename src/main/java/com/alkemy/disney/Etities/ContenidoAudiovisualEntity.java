@@ -2,9 +2,7 @@ package com.alkemy.disney.Etities;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import javax.persistence.*;
 
@@ -50,16 +48,11 @@ public class ContenidoAudiovisualEntity {
     )
     private List<PersonajeEntity> personajes = new ArrayList<>();
 
-    // @ManyToMany(mappedBy = "GeneroEntity", cascade = CascadeType.ALL)
-    // private List<GeneroEntity> generos = new ArrayList<>();
-    @ManyToMany(
-        cascade = CascadeType.ALL, 
-        targetEntity = GeneroEntity.class
-    )
     @JoinTable(
         name = "CONTENIDO_GENERO",
         joinColumns = @JoinColumn(name = "CONTENIDO_ID"),
         inverseJoinColumns = @JoinColumn(name = "GENERO_ID")
     )
+    @ElementCollection
     private List<GeneroEntity> generos = new ArrayList<>();
 }

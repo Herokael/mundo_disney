@@ -23,18 +23,6 @@ public class GeneroEntity {
     @Column(name = "IMAGEN")
     private String imagen;
 
-    // @ManyToMany(cascade = CascadeType.ALL, targetEntity = ContenidoAudiovisualEntity.class)
-    // @JoinColumn(name = "CONTENIDO_ID")
-    // private List<ContenidoAudiovisualEntity> contenidoAudiovisual = new ArrayList<>();
-
-    @ManyToMany(
-        cascade = CascadeType.ALL, 
-        targetEntity = ContenidoAudiovisualEntity.class
-    )
-    @JoinTable(
-        name = "CONTENIDO_GENERO",
-        joinColumns = @JoinColumn(name = "GENERO_ID"),
-        inverseJoinColumns = @JoinColumn(name = "CONTENIDO_ID")
-    )
+    @ManyToMany(mappedBy = "generos", cascade = CascadeType.ALL)
     private List<ContenidoAudiovisualEntity> contenidoAudiovisual = new ArrayList<>();
 }
