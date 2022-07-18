@@ -1,4 +1,4 @@
-package com.alkemy.disney.Etities;
+package com.alkemy.disney.etities;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +13,9 @@ import lombok.Setter;
 @Setter
 @Table(name = "GENERO")
 public class GeneroEntity {
+    
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "ID")
     private Long id;
 
@@ -23,6 +25,8 @@ public class GeneroEntity {
     @Column(name = "IMAGEN")
     private String imagen;
 
-    @ManyToMany(mappedBy = "generos", cascade = CascadeType.ALL)
+    private boolean deleted = Boolean.FALSE;
+
+    @ManyToMany(mappedBy = "generos", cascade = {CascadeType.PERSIST, CascadeType.MERGE})//({CascadeType.PERSIST, CascadeType.MERGE})
     private List<ContenidoAudiovisualEntity> contenidoAudiovisual = new ArrayList<>();
 }

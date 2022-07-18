@@ -1,4 +1,4 @@
-package com.alkemy.disney.Etities;
+package com.alkemy.disney.etities;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -16,6 +16,7 @@ import lombok.Setter;
 @Setter
 @Table(name = "CONTENIDO_AUDIOVISUAL")
 public class ContenidoAudiovisualEntity {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "ID")
@@ -33,6 +34,8 @@ public class ContenidoAudiovisualEntity {
     @Column(name = "FECHA_CREACION")
     @DateTimeFormat(pattern = "yyyy/MM/dd")
     private LocalDate fechaCreacion;
+
+    private boolean deleted = Boolean.FALSE;
 
     @ManyToMany(
         cascade = {
@@ -53,6 +56,7 @@ public class ContenidoAudiovisualEntity {
         joinColumns = @JoinColumn(name = "CONTENIDO_ID"),
         inverseJoinColumns = @JoinColumn(name = "GENERO_ID")
     )
+    
     @ElementCollection
     private List<GeneroEntity> generos = new ArrayList<>();
 }

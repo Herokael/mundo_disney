@@ -1,0 +1,18 @@
+{
+	"info": {
+		"_postman_id": "01c5acf5-ff30-4ae3-a0c6-a9e9749e1dc1",
+		"name": "Disney_App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21763536"
+	},
+	"item": [
+		{
+			"name": "disney",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
