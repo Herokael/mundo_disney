@@ -16,7 +16,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@SQLDelete(sql = "UPDATE CONTENIDO_AUDIOVISUAL SET delete = true WHERE ID=?")
+@SQLDelete(sql = "UPDATE CONTENIDO_AUDIOVISUAL SET deleted = true WHERE ID=?")
 @Where(clause = "deleted=false")
 @Table(name = "CONTENIDO_AUDIOVISUAL")
 public class ContenidoAudiovisualEntity {

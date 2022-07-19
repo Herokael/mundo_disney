@@ -14,7 +14,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@SQLDelete(sql = "UPDATE PERSONAJE SET delete = true WHERE ID=?") //Con esto provoco el borrado
+@SQLDelete(sql = "UPDATE PERSONAJE SET deleted = true WHERE ID=?") //Con esto provoco el borrado
 @Where(clause = "deleted=false") //con esto diferencio los que fueron eliminados de los que no
 @Table(name = "PERSONAJE")
 public class PersonajeEntity {
