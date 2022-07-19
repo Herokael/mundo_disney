@@ -5,12 +5,17 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
+
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
+@SQLDelete(sql = "UPDATE GENERO SET delete = true WHERE ID=?")
+@Where(clause = "deleted=false")
 @Table(name = "GENERO")
 public class GeneroEntity {
     

@@ -6,6 +6,8 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Getter;
@@ -14,6 +16,8 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@SQLDelete(sql = "UPDATE CONTENIDO_AUDIOVISUAL SET delete = true WHERE ID=?")
+@Where(clause = "deleted=false")
 @Table(name = "CONTENIDO_AUDIOVISUAL")
 public class ContenidoAudiovisualEntity {
     
