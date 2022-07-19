@@ -7,4 +7,5 @@ import com.alkemy.disney.dto.ContenidoAudiovisualDTO;
 public interface ContenidoAudiovisualService {
     ContenidoAudiovisualDTO save(ContenidoAudiovisualDTO dto);
     List<ContenidoAudiovisualDTO> getAllContenido();
+    void delete(Long id);
 }

@@ -35,4 +35,8 @@ public class GeneroServiceImpl implements GeneroService{
         List<GeneroDTO> result = generoMapper.generoEntityList2DTOList(generos);
         return result;
     }
+
+    public void delete(Long id){
+        generoRepository.deleteById(id);
+    }
 }

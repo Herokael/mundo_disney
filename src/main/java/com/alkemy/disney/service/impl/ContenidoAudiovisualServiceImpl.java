@@ -32,4 +32,8 @@ public class ContenidoAudiovisualServiceImpl implements ContenidoAudiovisualServ
         List<ContenidoAudiovisualDTO> result = contenidoAudiovisualMapper.contenidoEntityList2DTOList(contenidos);
         return result;
     }
+
+    public void delete(Long id){
+        contenidoAudiovisualRepository.deleteById(id);
+    }
 }
